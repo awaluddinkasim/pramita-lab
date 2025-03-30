@@ -51,7 +51,7 @@
             <div class="card">
                 <x-errors />
 
-                <form action="{{ route('admin.user.update', $user) }}" method="post" autocomplete="off">
+                <form action="{{ route('admin.account.admin.update', $user) }}" method="post" autocomplete="off">
                     @method('PUT')
                     @csrf
                     <div class="mb-3">
@@ -97,18 +97,6 @@
                                 </svg>
                             </button>
                         </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="divisionSelect" class="block text-sm font-medium mb-2">Divisi</label>
-                        <select id="divisionSelect" name="division_id"
-                            class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
-                            required>
-                            @foreach ($divisions as $division)
-                                <option value="{{ $division->id }}" @if ($division->id == $user->division_id) selected @endif>
-                                    {{ $division->nama }}</option>
-                            @endforeach
-                        </select>
                     </div>
 
                     <div class="flex justify-end mt-4">

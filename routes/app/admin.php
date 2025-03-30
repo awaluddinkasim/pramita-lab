@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
   Route::group(['prefix' => 'account', 'as' => 'account.'], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
     Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
+    Route::get('/admin/{admin}', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::put('/admin/{admin}', [AdminController::class, 'update'])->name('admin.update');
     Route::delete('/admin/{admin}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
     Route::get('/delivery-person', [DeliveryPersonController::class, 'index'])->name('delivery-person.index');

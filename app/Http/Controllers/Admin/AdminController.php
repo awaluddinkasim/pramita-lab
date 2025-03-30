@@ -32,6 +32,25 @@ class AdminController extends Controller
         return back()->with('success', 'Admin berhasil ditambahkan');
     }
 
+    public function edit(Admin $admin): View
+    {
+        return view('pages.admin.admin-edit', [
+            'user' => $admin,
+        ]);
+    }
+
+    public function update(Request $request, Admin $admin): RedirectResponse
+    {
+        $data = $request->validate([
+            'nama' => ['required'],
+            'email' => ['required', 'email'],
+        ]);
+
+        $admin->update($data);
+
+        return to_route('admin.account.admin.index')->with('success', 'Admin berhasil diubah');
+    }
+
     public function destroy(Admin $admin): RedirectResponse
     {
         $admin->delete();

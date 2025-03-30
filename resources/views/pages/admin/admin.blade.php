@@ -183,8 +183,10 @@
                                             {{ createDate($admin->created_at) }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                             @if ($admin->id !== auth()->user()->id)
+                                                <a class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-hidden focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none"
+                                                    href="{{ route('admin.account.admin.edit', $admin) }}">Edit</a>
                                                 <form action="{{ route('admin.account.admin.destroy', $admin) }}"
-                                                    method="post">
+                                                    method="post" class="inline">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit"
