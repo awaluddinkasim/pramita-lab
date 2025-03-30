@@ -15,6 +15,7 @@ Route::group(['middleware' => 'auth:user', 'prefix' => 'app'], function () {
 
   Route::get('/orders', [OrderController::class, 'index'])->name('orders');
   Route::get('/orders/{order}', [OrderController::class, 'show'])->name('order.show');
+  Route::delete('/orders/{order}', [OrderController::class, 'cancel'])->name('order.cancel');
 
   Route::get('/settings', [AccountController::class, 'index'])->name('settings');
   Route::put('/settings/account', [AccountController::class, 'updateAccount'])->name('settings.account');

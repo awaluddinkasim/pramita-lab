@@ -58,7 +58,18 @@
                         </div>
                     @endif
                 @else
-                    Masih menunggu pengiriman
+                    <div class="mb-5">
+                        Masih menunggu pengiriman
+                    </div>
+
+                    <form action="{{ route('order.cancel', $order) }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit"
+                            class="ms-0 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 focus:outline-hidden focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+                            Batalkan
+                        </button>
+                    </form>
                 @endif
 
             </section>

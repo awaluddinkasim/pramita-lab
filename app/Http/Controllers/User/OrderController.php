@@ -58,6 +58,6 @@ class OrderController extends Controller
 
         $order->delete();
 
-        return back()->with('success', __('order.cancelled'));
+        return to_route('orders')->with('success', __('order.cancelled'));
     }
 }
