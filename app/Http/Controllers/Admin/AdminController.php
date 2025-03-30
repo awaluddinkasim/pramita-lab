@@ -44,7 +44,14 @@ class AdminController extends Controller
         $data = $request->validate([
             'nama' => ['required'],
             'email' => ['required', 'email'],
+            'password' => ['nullable', 'confirmed'],
         ]);
+
+        if ($data['password']) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            unset($data['password']);
+        }
 
         $admin->update($data);
 
