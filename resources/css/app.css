@@ -22,10 +22,14 @@ button {
 }
 
 .nav-link {
-  @apply flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-700 focus:outline-hidden focus:bg-gray-700;
+  @apply flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-700 focus:outline-hidden focus:bg-gray-700 transition duration-150;
 }
 
 .nav-active {
+  @apply bg-blue-500;
+}
+
+.nav-active:hover {
   @apply bg-blue-400;
 }
 
