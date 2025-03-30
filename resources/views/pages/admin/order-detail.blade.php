@@ -19,7 +19,7 @@
                     <p class="dark:text-white">{{ $order->detail }}</p>
                 </div>
 
-                <hr class="my-7  text-gray-200 dark:text-neutral-600">
+                <hr class="my-7 text-gray-200 dark:text-neutral-600">
 
                 <h2 class="text-3xl dark:text-white mb-5">Informasi Pengiriman</h2>
 
@@ -58,7 +58,14 @@
                         </div>
                     @endif
                 @else
-                    Masih menunggu pengiriman
+                    <div class="mb3">
+                        Masih menunggu pengiriman
+                    </div>
+
+                    <button onclick="location.href='{{ route('admin.order.edit', $order->id) }}'"
+                        class="m-1 ms-0 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                        Edit
+                    </button>
                 @endif
 
             </section>

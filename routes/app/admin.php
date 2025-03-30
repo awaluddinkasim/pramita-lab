@@ -48,6 +48,8 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
 
   Route::get('/orders', [OrderController::class, 'index'])->name('orders');
   Route::get('/orders/{order}', [OrderController::class, 'show'])->name('order.show');
+  Route::get('/order/{order}/edit', [OrderController::class, 'edit'])->name('order.edit');
+  Route::put('/order/{order}/update', [OrderController::class, 'update'])->name('order.update');
 
   Route::get('/settings', [AccountController::class, 'index'])->name('settings');
   Route::put('/settings/account', [AccountController::class, 'updateAccount'])->name('settings.account');
