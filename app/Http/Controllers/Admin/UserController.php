@@ -40,7 +40,7 @@ class UserController extends Controller
 
         User::create($data);
 
-        return back()->with('success', 'User berhasil ditambahkan');
+        return back()->with('success', __('account.user_created'));
     }
 
     public function edit(User $user): View
@@ -68,7 +68,7 @@ class UserController extends Controller
 
         $user->update($data);
 
-        return to_route('admin.user.active')->with('success', 'User berhasil diupdate');
+        return to_route('admin.user.active')->with('success', __('account.user_updated'));
     }
 
     public function verify(User $user): RedirectResponse
@@ -77,13 +77,13 @@ class UserController extends Controller
             'terverifikasi' => true,
         ]);
 
-        return back()->with('success', 'User berhasil diverifikasi');
+        return back()->with('success', __('account.user_verified'));
     }
 
     public function destroy(User $user): RedirectResponse
     {
         $user->delete();
 
-        return back()->with('success', 'User berhasil dihapus');
+        return back()->with('success', __('account.user_deleted'));
     }
 }

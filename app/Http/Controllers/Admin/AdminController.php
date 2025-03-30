@@ -29,7 +29,7 @@ class AdminController extends Controller
 
         Admin::create($data);
 
-        return back()->with('success', 'Admin berhasil ditambahkan');
+        return back()->with('success', __('account.admin_created'));
     }
 
     public function edit(Admin $admin): View
@@ -55,13 +55,13 @@ class AdminController extends Controller
 
         $admin->update($data);
 
-        return to_route('admin.account.admin.index')->with('success', 'Admin berhasil diubah');
+        return to_route('admin.account.admin.index')->with('success', __('account.admin_updated'));
     }
 
     public function destroy(Admin $admin): RedirectResponse
     {
         $admin->delete();
 
-        return back()->with('success', 'Admin berhasil dihapus');
+        return back()->with('success', __('account.admin_deleted'));
     }
 }

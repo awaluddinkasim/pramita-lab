@@ -9,5 +9,6 @@ return [
   'delivery_person_deleted' => 'Delivery person deleted successfully',
   'user_created' => 'User created successfully',
   'user_updated' => 'User updated successfully',
+  'user_verified' => 'User verified successfully',
   'user_deleted' => 'User deleted successfully',
 ];

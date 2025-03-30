@@ -9,5 +9,6 @@ return [
   'delivery_person_deleted' => 'Delivery person berhasil dihapus',
   'user_created' => 'User berhasil dibuat',
   'user_updated' => 'User berhasil diperbarui',
+  'user_verified' => 'User berhasil diverifikasi',
   'user_deleted' => 'User berhasil dihapus',
 ];

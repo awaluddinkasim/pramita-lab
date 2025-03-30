@@ -29,7 +29,7 @@ class DeliveryPersonController extends Controller
 
         DeliveryPerson::create($data);
 
-        return back()->with('success', 'Delivery person created successfully');
+        return back()->with('success', __('account.delivery_person_created'));
     }
 
     public function edit(DeliveryPerson $deliveryPerson): View
@@ -55,13 +55,13 @@ class DeliveryPersonController extends Controller
 
         $deliveryPerson->update($data);
 
-        return to_route('admin.account.delivery-person.index')->with('success', 'Delivery person updated successfully');
+        return to_route('admin.account.delivery-person.index')->with('success', __('account.delivery_person_updated'));
     }
 
     public function destroy(DeliveryPerson $deliveryPerson): RedirectResponse
     {
         $deliveryPerson->delete();
 
-        return back()->with('success', 'Delivery person deleted successfully');
+        return back()->with('success', __('account.delivery_person_deleted'));
     }
 }
