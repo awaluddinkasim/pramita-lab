@@ -20,7 +20,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-blue-50 dark:bg-blue-900">
+<body class="bg-blue-50">
     <x-sidebar />
 
     <x-header />
