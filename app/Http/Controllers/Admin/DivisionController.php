@@ -25,13 +25,13 @@ class DivisionController extends Controller
 
         Division::create($data);
 
-        return to_route('admin.division.index')->with('success', 'Division created successfully');
+        return to_route('admin.division.index')->with('success', __('division.created'));
     }
 
     public function destroy(Division $division): RedirectResponse
     {
         $division->delete();
 
-        return to_route('admin.division.index')->with('success', 'Division deleted successfully');
+        return to_route('admin.division.index')->with('success', __('division.deleted'));
     }
 }
