@@ -8,4 +8,5 @@ return [
   'processing' => 'Permintaan pengiriman sedang diproses',
   'cancelled' => 'Permintaan pengiriman berhasil dibatalkan',
   'created' => 'Permintaan pengiriman berhasil dibuat',
+  'updated' => 'Permintaan pengiriman berhasil diperbarui',
 ];

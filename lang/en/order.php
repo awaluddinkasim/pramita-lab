@@ -8,4 +8,5 @@ return [
   'processing' => 'Delivery request is being processed',
   'cancelled' => 'Delivery request cancelled',
   'created' => 'Delivery request created',
+  'updated' => 'Delivery request updated',
 ];
