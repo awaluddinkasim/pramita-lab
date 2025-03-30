@@ -1,24 +1,3 @@
-@push('scripts')
-    @if (Session::has('success'))
-        <script type="module">
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: '{{ Session::get('success') }}'
-            })
-        </script>
-    @endif
-    @if (Session::has('error'))
-        <script type="module">
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: '{{ Session::get('error') }}'
-            })
-        </script>
-    @endif
-@endpush
-
 <x-layouts.auth title="Login">
     <img src="{{ asset('assets/images/logo.jpg') }}" alt="" class="rounded mb-10 w-sm mx-auto">
 
