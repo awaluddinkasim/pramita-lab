@@ -45,7 +45,7 @@
     </script>
 @endpush
 
-<x-layouts.main title="Edit Data Pengguna">
+<x-layouts.main title="Edit Data Admin">
     <div class="grid lg:grid-cols-2 gap-4">
         <section id="divisions">
             <div class="card">
