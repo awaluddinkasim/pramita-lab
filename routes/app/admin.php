@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DeliveryPersonController;
 use App\Http\Controllers\Admin\DivisionController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,9 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
     Route::post('/verify/{user}', [UserController::class, 'verify'])->name('verify');
     Route::delete('/delete/{user}', [UserController::class, 'destroy'])->name('destroy');
   });
+
+  Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+  Route::get('/orders/{order}', [OrderController::class, 'show'])->name('order.show');
 
   Route::get('/settings', [AccountController::class, 'index'])->name('settings');
   Route::put('/settings/account', [AccountController::class, 'updateAccount'])->name('settings.account');

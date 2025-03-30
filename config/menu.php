@@ -48,6 +48,12 @@ return [
         ],
       ],
     ],
+    [
+      'active' => 'orders',
+      'label' => 'Pengiriman',
+      'icon' => 'clipboard-list',
+      'route' => 'admin.orders',
+    ],
   ],
   'delivery' => [
     [
