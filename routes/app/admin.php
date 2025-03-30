@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
     Route::delete('/admin/{admin}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
     Route::get('/delivery-person', [DeliveryPersonController::class, 'index'])->name('delivery-person.index');
+    Route::get('/delivery-person/{deliveryPerson}', [DeliveryPersonController::class, 'edit'])->name('delivery-person.edit');
+    Route::put('/delivery-person/{deliveryPerson}', [DeliveryPersonController::class, 'update'])->name('delivery-person.update');
     Route::post('/delivery-person', [DeliveryPersonController::class, 'store'])->name('delivery-person.store');
     Route::delete('/delivery-person/{deliveryPerson}', [DeliveryPersonController::class, 'destroy'])->name('delivery-person.destroy');
   });

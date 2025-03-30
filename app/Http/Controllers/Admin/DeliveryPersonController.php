@@ -32,6 +32,32 @@ class DeliveryPersonController extends Controller
         return back()->with('success', 'Delivery person created successfully');
     }
 
+    public function edit(DeliveryPerson $deliveryPerson): View
+    {
+        return view('pages.admin.delivery-person-edit', [
+            'user' => $deliveryPerson,
+        ]);
+    }
+
+    public function update(Request $request, DeliveryPerson $deliveryPerson): RedirectResponse
+    {
+        $data = $request->validate([
+            'nama' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['nullable', 'confirmed'],
+        ]);
+
+        if ($data['password']) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            unset($data['password']);
+        }
+
+        $deliveryPerson->update($data);
+
+        return to_route('admin.account.delivery-person.index')->with('success', 'Delivery person updated successfully');
+    }
+
     public function destroy(DeliveryPerson $deliveryPerson): RedirectResponse
     {
         $deliveryPerson->delete();
