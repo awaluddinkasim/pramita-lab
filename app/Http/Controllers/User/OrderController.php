@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Events\OrderSubmitted;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
@@ -38,7 +39,9 @@ class OrderController extends Controller
         $data['user_id'] = auth('user')->user()->id;
         $data['divisi'] = auth('user')->user()->divisi->nama;
 
-        Order::create($data);
+        $order = Order::create($data);
+
+        event(new OrderSubmitted($order));
 
         return to_route('orders')->with('success', __('order.created'));
     }
