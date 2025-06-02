@@ -25,6 +25,10 @@
                                     </th>
                                     <th scope="col"
                                         class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">
+                                        Waktu Order
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">
                                         Status
                                     </th>
                                     <th scope="col"
@@ -47,6 +51,9 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
                                             {{ $order->tujuan }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            {{ createDateTime($order->created_at) }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                                             Tersedia
